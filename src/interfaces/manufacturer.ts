@@ -1,1 +1,6 @@
-export type Manufacturer = any;
+export interface Manufacturer {
+  name: string;
+  models: {
+    name: string;
+  }[];
+}
