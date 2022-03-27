@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import {Details} from "./routes/Details";
-import {List} from "./routes/List";
+import {Details} from "./components/Details";
+import {List} from "./components/List";
 
 ReactDOM.render(
   <React.StrictMode>

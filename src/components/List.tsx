@@ -1,14 +1,10 @@
 import {useSearchParams} from "react-router-dom";
 import React, {FormEvent, useEffect, useState} from "react";
 import {getCars, getColors, getManufacturers} from "../api/requests";
-import {Car} from "../interfaces/car";
 import {Manufacturer} from "../interfaces/manufacturer";
 import {CarsPage} from "../interfaces/cars-page";
 import {Button, Form} from "react-bootstrap";
-
-function Card(props: Car) {
-  return <div>{JSON.stringify(props)}</div>
-}
+import {Card} from "./Card";
 
 enum Filter {
   COLOR = 'color',
@@ -20,8 +16,10 @@ interface FiltersForm extends HTMLFormElement{
   [Filter.MANUFACTURER]: HTMLSelectElement,
 }
 
+const initialPageData = {cars: new Array(10).fill(null)};
+
 export function List() {
-  const [page, setPage] = useState<CarsPage>({cars: new Array(10).fill(null)});
+  const [page, setPage] = useState<CarsPage>(initialPageData);
   const [pageNumber, setPageNumber] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedColor = searchParams.get('color') || undefined;
@@ -32,7 +30,9 @@ export function List() {
   );
   const [colors, setColors] = useState<string[]>(selectedColor ? [selectedColor] : []);
 
-  useEffect(() => {getCars({
+  useEffect(() => {
+    setPage((_page) => ({..._page, ...initialPageData}));
+    getCars({
     color: selectedColor,
     page: pageNumber,
     manufacturer: selectedManufacturer
