@@ -2,14 +2,6 @@ import React from 'react';
 import './App.css';
 import {Link, Outlet} from 'react-router-dom';
 
-export function List() {
-  return <div>list</div>
-}
-
-export function Details() {
-  return <div>details</div>
-}
-
 function App() {
   return (
     <>

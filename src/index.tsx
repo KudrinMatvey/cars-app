@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App, {Details, List} from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {Details} from "./routes/Details";
+import {List} from "./routes/List";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route element={<App/>}>
-          <Route path="/:id" element={<Details/>}/>
-          <Route path="/" element={<List/>}/>
+          <Route path="/cars">
+            <Route path=":id" element={<Details/>}/>
+            <Route index element={<List/>}/>
+          </Route>
+          <Route
+            path="/"
+            element={<Navigate to="/cars" replace />}
+          />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
