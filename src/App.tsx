@@ -1,26 +1,16 @@
 import React from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
 
-import {Link, Outlet} from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
+import {Header} from "./components/Header";
+import {Footer} from "./components/Footer";
 
 function App() {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/purchase">Purchase</Link>
-          </li>
-          <li>
-            <Link to="/my-orders">My Orders</Link>
-          </li>
-          <li>
-            <Link to="/sell">Sell</Link>
-          </li>
-        </ul>
-      </nav>
+      <Header/>
       <Outlet/>
+      <Footer/>
     </>
   );
 }

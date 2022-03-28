@@ -16,18 +16,18 @@ function formatDetailsString(car: Car) {
 }
 
 export function Card({car}: { car?: Car }) {
-  return <div className={styles.card}>
-    {car ? <>
-      <img className={styles.image} src={car.pictureUrl} alt={car.modelName}/>
-      <div className={styles.model}>{car.modelName}</div>
-      <div className={styles.details}>{formatDetailsString(car)}</div>
-      <Link className={styles.link} to={`/cars/${car.stockNumber}`}>View details</Link>
-    </>: <>
+  if (!car) {
+    return <Placeholder className={styles.card} animation="glow">
       <Placeholder className={styles.image}/>
-      <Placeholder className={styles.model} xs={4} animation="glow"/>
-      <Placeholder className={styles.details} xs={4} animation="glow"/>
-      <Placeholder className={styles.link} xs={3} animation="glow"/>
-    </>
-    }
-  </div>
+      <Placeholder className={styles.model} xs={4}/>
+      <Placeholder className={styles.details} xs={4}/>
+      <Placeholder className={styles.link} xs={3}/>
+    </Placeholder>;
+  }
+  return <div className={styles.card}>
+    <img className={styles.image} src={car.pictureUrl} alt={car.modelName}/>
+    <div className={styles.model}>{car.modelName}</div>
+    <div className={styles.details}>{formatDetailsString(car)}</div>
+    <Link className={styles.link} to={`/cars/${car.stockNumber}`}>View details</Link>
+  </div>;
 }

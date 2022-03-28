@@ -1,0 +1,27 @@
+@import "../variables";
+
+.header {
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding-l;
+  border-bottom: $border;
+}
+
+.nav {
+  height: $header-height;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: $color-tundra;
+  text-decoration: none;
+  font-size: $font-size-m;
+  margin-left: $padding-l;
+
+  &:hover {
+    color: $color-tango;
+  }
+}

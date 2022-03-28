@@ -1,0 +1,18 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&');
+$theme-colors: (
+  "primary": $color-tango,
+);
+@import "~bootstrap/scss/bootstrap";
+
+.btn.btn-primary {
+  color: white;
+
+  &:hover {
+    background-color: $color-ochre;
+  }
+}
+#root {
+  font-family: Roboto, sans-serif;
+  color: $color-tundra;
+}
