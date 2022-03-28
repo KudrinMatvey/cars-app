@@ -1,0 +1,37 @@
+@import "src/variables";
+
+.filters {
+  flex: 1 0 30%;
+  border: $border;
+  padding: $padding-l;
+}
+
+.button {
+  margin-top: $padding-l;
+  float: right;
+}
+
+.filter {
+  &+.filter {
+    margin-top: $padding-m;
+  }
+
+  .label {
+    margin-bottom: $padding-s;
+  }
+}
+
+.list {
+}
+
+.main {
+  align-items: flex-start;
+  flex: 2 0 70%;
+}
+
+.page {
+  display: flex;
+  align-items: baseline;
+  gap: $padding-l;
+  padding: $padding-l;
+}

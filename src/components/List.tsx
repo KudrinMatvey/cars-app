@@ -5,6 +5,7 @@ import {Manufacturer} from "../interfaces/manufacturer";
 import {CarsPage} from "../interfaces/cars-page";
 import {Button, Form} from "react-bootstrap";
 import {Card} from "./Card";
+import styles from './List.module.scss'
 
 enum Filter {
   COLOR = 'color',
@@ -18,6 +19,7 @@ interface FiltersForm extends HTMLFormElement{
 
 const initialPageData = {cars: new Array(10).fill(null)};
 
+//todo rename variables
 export function List() {
   const [page, setPage] = useState<CarsPage>(initialPageData);
   const [pageNumber, setPageNumber] = useState(1);
@@ -55,31 +57,31 @@ export function List() {
     setSearchParams(searchParams);
   };
 
-  return <>
-    <aside>
+  return <div className={styles.page}>
+    <aside className={styles.filters}>
       <Form onSubmit={submitForm}>
-        <Form.Group controlId={Filter.COLOR}>
-          <Form.Label>Color</Form.Label>
+        <Form.Group className={styles.filter} controlId={Filter.COLOR}>
+          <Form.Label className={styles.label}>Color</Form.Label>
           <Form.Select aria-label="Select color" defaultValue={selectedColor}>
             <option>All colors</option>
             {colors.map(color => <option value={color} key={color}>{color}</option> )}
           </Form.Select>
         </Form.Group>
 
-        <Form.Group controlId={Filter.MANUFACTURER}>
-          <Form.Label>Manufacturer</Form.Label>
+        <Form.Group className={styles.filter} controlId={Filter.MANUFACTURER}>
+          <Form.Label className={styles.label}>Manufacturer</Form.Label>
           <Form.Select aria-label="Select manufacturer" defaultValue={selectedManufacturer}>
             <option>All manufacturers</option>
             {manufacturers.map(({name}) => <option value={name} key={name}>{name}</option> )}
           </Form.Select>
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button className={styles.button} variant="primary" type="submit">
           Submit
         </Button>
       </Form>
     </aside>
-    <main>
+    <main className={styles.main}>
       <h3>
         Available cars
       </h3>
@@ -93,5 +95,5 @@ export function List() {
           </li>)}
       </ul>
     </main>
-  </>
+  </div>
 }
