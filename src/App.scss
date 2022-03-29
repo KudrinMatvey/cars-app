@@ -18,6 +18,10 @@ $theme-colors: (
   color: $color-tundra;
 }
 
+body {
+  --bs-body-font-size: #{$font-size-s};
+}
+
 html, body, #root {
   height: 100%;
 }
@@ -26,4 +30,19 @@ html, body, #root {
   width: 128px;
   height: 32px;
   line-height: 1em;
+}
+
+a, .btn-link {
+  color: $color-tango;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-tango;
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
 }

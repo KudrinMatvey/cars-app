@@ -17,6 +17,7 @@ export function Details() {
       .then(setCar)
       .catch(() => navigate('/not-found', {replace: true}))
   }, [id , navigate]);
+  // todo placeholder
   if(!car) return null;
   return <div className={styles.pageWrapper}>
     {/*<Placeholder as="img"></Placeholder>*/}

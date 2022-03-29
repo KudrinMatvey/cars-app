@@ -38,15 +38,6 @@ $img-height: 64px;
 .link {
   grid-area: link;
   font-size: $font-size-s;
-  text-decoration: none;
   margin-right: auto;
   line-height: 1em;
-
-  &:not(.placeholderLink) {
-    color: $color-tango;
-    &:hover {
-      color: $color-tango;
-      text-decoration: underline;
-    }
-  }
 }

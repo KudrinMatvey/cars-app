@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {Details} from "./components/Details";
 import {List} from "./components/List";
+import {NotFound} from "./components/NotFound";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,13 +21,10 @@ ReactDOM.render(
             path="/"
             element={<Navigate to="/cars" replace />}
           />
+          <Route path="/not-found" element={<NotFound/>}/>
           <Route
             path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
+            element={<Navigate to="/not-found" replace/>}
           />
         </Route>
       </Routes>

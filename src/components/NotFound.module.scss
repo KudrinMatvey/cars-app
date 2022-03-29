@@ -1,0 +1,23 @@
+@import "src/variables";
+
+.wrapper {
+  height: $content-min-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: $padding-l;
+}
+
+.logo {
+  height: 32px;
+}
+
+.header {
+  font-weight: bold;
+  font-size: $font-size-l;
+}
+
+.par {
+  font-size: $font-size-m;
+}

@@ -1,7 +1,6 @@
 @import "src/variables";
 
 $content-max-width: 800px + (2 * $padding-m);
-$content-min-height: calc(100% - 2 * #{$header-height});
 
 .contentWrapper {
   max-width: $content-max-width;

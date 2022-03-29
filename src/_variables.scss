@@ -10,6 +10,8 @@ $padding-l: 24px;
 $header-height: 80px;
 $details-content-width: 800px;
 
+$content-min-height: calc(100% - 2 * #{$header-height});
+
 $font-size-xs: 12px;
 $font-size-s: 14px;
 $font-size-m: 18px;
