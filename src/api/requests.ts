@@ -5,7 +5,7 @@ import {FilterQuery} from "../interfaces/filter-query";
 import {omitUndefined} from "../utils/omit-undefined";
 
 export function getCar(stockNumber: number): Promise<Car> {
-  return fetch(`https://auto1-mock-server.herokuapp.com/api//cars/${stockNumber}`)
+  return fetch(`https://auto1-mock-server.herokuapp.com/api/cars/${stockNumber}`)
     .then(res => res.json())
     .then(({car}) => car)
 }

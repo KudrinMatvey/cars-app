@@ -12,7 +12,18 @@ $theme-colors: (
     background-color: $color-ochre;
   }
 }
+
 #root {
   font-family: Roboto, sans-serif;
   color: $color-tundra;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.btn {
+  width: 128px;
+  height: 32px;
+  line-height: 1em;
 }

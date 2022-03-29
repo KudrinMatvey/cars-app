@@ -1,0 +1,49 @@
+@import "src/variables";
+
+$content-max-width: 800px + (2 * $padding-m);
+$content-min-height: calc(100% - 2 * #{$header-height});
+
+.contentWrapper {
+  max-width: $content-max-width;
+  padding: $padding-l $padding-m 0;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.pageWrapper {
+  min-height: $content-min-height;
+}
+
+.main {
+  flex: 2;
+}
+
+.title {
+  font-size: $font-size-l;
+  font-weight: bold;
+}
+
+.details {
+  margin: $padding-l 0 ;
+  font-size: $font-size-m;
+}
+
+.deliveryText {
+  font-size: $font-size-s;
+}
+
+.aside {
+  border: $border;
+  padding: $padding-l;
+  font-size: $font-size-s;
+  flex: 1;
+}
+
+.button {
+  float: right;
+}
+
+.saveText {
+  margin-bottom: $padding-s;
+}

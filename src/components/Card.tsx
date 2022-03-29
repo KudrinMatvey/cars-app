@@ -2,18 +2,7 @@ import {Car} from "../interfaces/car";
 import {Link} from "react-router-dom";
 import {Placeholder} from "react-bootstrap";
 import styles from './Card.module.scss'
-import {capitalize} from "../utils/capitalize";
-
-function formatDetailsString(car: Car) {
-  return [
-    `Stock # ${car.stockNumber}`,
-    car.mileage ? `${car.mileage.number.toLocaleString('en-GB')} ${car.mileage.unit.toUpperCase()}` : '',
-    car.fuelType,
-    capitalize(car.color)
-  ]
-    .filter(Boolean)
-    .join(' - ')
-}
+import {formatDetailsString} from "../utils/format-details-string";
 
 export function Card({car}: { car?: Car }) {
   if (!car) {
