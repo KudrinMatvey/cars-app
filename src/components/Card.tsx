@@ -21,12 +21,12 @@ export function Card({car}: { car?: Car }) {
       <Placeholder className={styles.image}/>
       <Placeholder className={styles.model} xs={4}/>
       <Placeholder className={styles.details} xs={4}/>
-      <Placeholder className={styles.link} xs={3}/>
+      <Placeholder className={[styles.link, styles.placeholderLink]} xs={3}/>
     </Placeholder>;
   }
   return <div className={styles.card}>
     <img className={styles.image} src={car.pictureUrl} alt={car.modelName}/>
-    <div className={styles.model}>{car.modelName}</div>
+    <div className={styles.model}>{car.manufacturerName} {car.modelName}</div>
     <div className={styles.details}>{formatDetailsString(car)}</div>
     <Link className={styles.link} to={`/cars/${car.stockNumber}`}>View details</Link>
   </div>;

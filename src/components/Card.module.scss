@@ -1,27 +1,52 @@
+@import "src/variables";
+
+$img-width: 78px;
+$img-height: 64px;
+
 .card {
   display: grid;
   grid-template:
           "image model"
           "image details"
-          "image link" / 64px auto;
-  grid-column-gap: 8px;
-  grid-row-gap: 8px;
+          "image link" / $img-width auto;
+  grid-column-gap: $padding-l;
+  grid-row-gap: $padding-s;
+  padding: $padding-m;
+  border: $border;
 }
 
 .image {
   grid-area: image;
-  width: 64px;
-  height: 64px;
+  object-fit: contain;
+  width: $img-width;
+  height: $img-height;
 }
 
 .model {
   grid-area: model;
+  font-weight: bold;
+  font-size: $font-size-m;
+  line-height: 1em;
 }
 
 .details {
   grid-area: details;
+  font-size: $font-size-s;
+  line-height: 1em;
 }
 
 .link {
   grid-area: link;
+  font-size: $font-size-s;
+  text-decoration: none;
+  margin-right: auto;
+  line-height: 1em;
+
+  &:not(.placeholderLink) {
+    color: $color-tango;
+    &:hover {
+      color: $color-tango;
+      text-decoration: underline;
+    }
+  }
 }

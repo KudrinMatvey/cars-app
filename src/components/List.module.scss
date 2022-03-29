@@ -1,12 +1,12 @@
 @import "src/variables";
 
 .filters {
-  flex: 1 0 30%;
+  flex: 1 1 30%;
   border: $border;
   padding: $padding-l;
 }
 
-.button {
+.filterButton {
   margin-top: $padding-l;
   float: right;
 }
@@ -22,16 +22,65 @@
 }
 
 .list {
+  list-style: none;
+  padding: 0;
+}
+
+.listItem + .listItem {
+  margin-top: $padding-m;
+}
+
+.pageControl {
+  margin-top: $padding-m;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $padding-m;
 }
 
 .main {
   align-items: flex-start;
-  flex: 2 0 70%;
+  flex: 2 2 70%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: $font-size-m;
+  margin-bottom: $padding-m;
+}
+
+.subtitle {
+  font-size: $font-size-m;
+  margin-bottom: $padding-m;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .page {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: $padding-l;
   padding: $padding-l;
+}
+
+%button {
+  font-size: $font-size-s;
+  text-decoration: none;
+  color: $color-tango;
+
+  &:hover {
+    color: $color-tango;
+    text-decoration: underline;
+  }
+}
+
+.button {
+  @extend %button;
+}
+
+.buttonHidden {
+  @extend %button;
+  visibility: hidden;
 }
