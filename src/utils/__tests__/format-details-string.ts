@@ -1,5 +1,5 @@
-import { formatDetailsString } from './format-details-string';
-import { Car } from '../types/car';
+import { formatDetailsString } from '../format-details-string';
+import { Car } from '../../types/car';
 
 describe('format details string', () => {
   it('returns proper string if all fields are present', () => {

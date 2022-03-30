@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Pagination } from './Pagination';
-import styles from './Pagination.module.scss';
+import { Pagination } from '../Pagination';
+import styles from '../Pagination.module.scss';
 
 describe('pagination', () => {
   it('should hide back if no going back', async () => {

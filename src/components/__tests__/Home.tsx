@@ -1,12 +1,12 @@
 import userEvent from '@testing-library/user-event';
 import { useSearchParams } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import { Home } from './Home';
-import { Filter } from '../types/filter';
+import { Home } from '../Home';
+import { Filter } from '../../types/filter';
 import Mock = jest.Mock;
 
 let mockFilters: {[key in Filter]?: string};
-jest.mock('./Filters', () => ({
+jest.mock('../Filters', () => ({
   Filters({ onSubmit }: any) {
     return <button type="submit" onClick={() => onSubmit(mockFilters)}> filter </button>;
   },

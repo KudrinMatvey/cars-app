@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Filters } from './Filters';
+import { Filters } from '../Filters';
 
 const mockColorOptions = ['Yellow', 'Pink'];
 const mockManufacturerOptions = [{ name: 'Porsche', models: [] }, { name: 'Audi', models: [] }];

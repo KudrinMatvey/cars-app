@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Details } from './Details';
-import { getCar } from '../api/requests';
+import { Details } from '../Details';
+import { getCar } from '../../api/requests';
 import Mock = jest.Mock;
 
-jest.mock('../api/requests');
+jest.mock('../..q/api/requests');
 jest.mock('react-router-dom');
 
 const carWithImg = {

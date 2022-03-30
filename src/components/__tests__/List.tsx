@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { List } from './List';
-import { Car } from '../types/car';
-import { formatDetailsString } from '../utils/format-details-string';
+import { List } from '../List';
+import { Car } from '../../types/car';
+import { formatDetailsString } from '../../utils/format-details-string';
 
 const mockCars: Car[] = new Array(7).map((val, index) => ({
   stockNumber: index,

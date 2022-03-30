@@ -1,4 +1,4 @@
-import { omitUndefined } from './omit-undefined';
+import { omitUndefined } from '../omit-undefined';
 
 describe('omit undefined', () => {
   it('omits all undefined keys', () => {

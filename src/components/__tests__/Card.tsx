@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Card } from './Card';
+import { Card } from '../Card';
 
 describe('card component', () => {
   test('show placeholder if car is null', () => {
