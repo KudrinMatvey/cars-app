@@ -6,29 +6,6 @@
   padding: $padding-l;
 }
 
-.filterButton {
-  margin-top: $padding-l;
-  float: right;
-}
-
-.filter {
-  & + .filter {
-    margin-top: $padding-m;
-  }
-
-  .label {
-    margin-bottom: $padding-s;
-  }
-}
-
-.pageControl {
-  margin-top: $padding-m;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: $padding-m;
-}
-
 .main {
   align-items: flex-start;
   flex: 2 2 70%;
@@ -44,15 +21,4 @@
   min-height: $content-min-height;
   gap: $padding-l;
   padding: $padding-l;
-}
-
-.button {
-  color: $color-tango;
-  width: initial;
-}
-
-.buttonHidden {
-  color: $color-tango;
-  width: initial;
-  visibility: hidden;
 }

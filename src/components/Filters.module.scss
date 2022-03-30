@@ -1,0 +1,16 @@
+@import "src/variables";
+
+.button {
+  margin-top: $padding-l;
+  float: right;
+}
+
+.filter {
+  & + .filter {
+    margin-top: $padding-m;
+  }
+}
+
+.label {
+  margin-bottom: $padding-s;
+}

@@ -1,0 +1,20 @@
+@import "src/variables";
+
+.wrapper {
+  margin-top: $padding-m;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $padding-m;
+}
+
+.button {
+  color: $color-tango;
+  width: initial;
+}
+
+.buttonHidden {
+  color: $color-tango;
+  width: initial;
+  visibility: hidden;
+}
