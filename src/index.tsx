@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {BrowserRouter, Navigate, Route, Routes,} from 'react-router-dom';
+import {
+  BrowserRouter, Navigate, Route, Routes,
+} from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Details} from './components/Details';
-import {List} from './components/List';
-import {NotFound} from './components/NotFound';
+import { Details } from './components/Details';
+import { List } from './components/List';
+import { NotFound } from './components/NotFound';
 
 // to app, app to page wrapper
 ReactDOM.render(
