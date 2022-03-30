@@ -11,20 +11,22 @@ export function Details() {
   const navigate = useNavigate();
   const id = parseInt(params.id as string);
   const [car, setCar] = useState<Car>();
-  const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgStatus, setImgStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
 
   useEffect(() => {
     getCar(id)
       .then(setCar)
       .catch(() => navigate('/not-found', {replace: true}))
   }, [id , navigate]);
-  // todo placeholder
-  if(!car) return null;
+
+  const showImage = car?.pictureUrl && imgStatus === 'loaded';
+  const showImagePlaceholder = car?.pictureUrl && imgStatus === 'loading';
+
   return <div className={styles.pageWrapper}>
-    {/*<Placeholder as="img"></Placeholder>*/}
-    <img src={car.pictureUrl} alt=""
-      // onLoad={}
-    />
+    {showImagePlaceholder && <Placeholder as="img" className={styles.img} src={car.pictureUrl} alt=""
+                                             onLoad={() => {setImgStatus('loaded')}} onError={() => setImgStatus('error')} />}
+    {showImage && <img className={styles.img} src={car.pictureUrl} alt=""/>}
+
     <div className={styles.contentWrapper}>
       <main className={styles.main}>
         {car ? <h3 className={styles.title}> {car.manufacturerName} {car.modelName} </h3> : <Placeholder as="h3"/>}

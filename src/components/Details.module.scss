@@ -1,6 +1,13 @@
 @import "src/variables";
 
 $content-max-width: 800px + (2 * $padding-m);
+$img-height: 300px;
+
+.img {
+  width: 100%;
+  object-fit: contain;
+  height: $img-height;
+}
 
 .contentWrapper {
   max-width: $content-max-width;
