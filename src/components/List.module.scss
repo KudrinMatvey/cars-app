@@ -12,7 +12,7 @@
 }
 
 .filter {
-  &+.filter {
+  & + .filter {
     margin-top: $padding-m;
   }
 

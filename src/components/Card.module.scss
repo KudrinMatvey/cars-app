@@ -6,11 +6,10 @@ $img-height: 64px;
 .card {
   display: grid;
   grid-template:
-          "image model"
-          "image details"
-          "image link" / $img-width auto;
-  grid-column-gap: $padding-l;
-  grid-row-gap: $padding-s;
+    "image model"
+    "image details"
+    "image link" / $img-width auto;
+  grid-gap: $padding-s $padding-l;
   padding: $padding-m;
   border: $border;
 }

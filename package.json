@@ -25,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eslint": "eslint src/**/*.{ts,tsx} --fix",
+    "stylelint": "stylelint \"**/*.scss\" --fix",
     "eject": "react-scripts eject"
   },
   "browserslist": {
