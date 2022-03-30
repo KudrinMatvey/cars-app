@@ -1,4 +1,4 @@
-import {omitUndefined} from "./omit-undefined";
+import {omitUndefined} from './omit-undefined';
 
 describe('omit undefined', () => {
   it('omits all undefined keys', () => {
@@ -11,9 +11,9 @@ describe('omit undefined', () => {
       a: 1,
       c: {},
     });
-  })
+  });
 
   it('keeps all null keys', () => {
-    expect(omitUndefined({a: null})).toEqual({a: null});
-  })
-})
+    expect(omitUndefined({ a: null })).toEqual({ a: null });
+  });
+});

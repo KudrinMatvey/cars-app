@@ -1,5 +1,11 @@
-import styles from './Footer.module.scss'
+import styles from './Footer.module.scss';
 
-export const Footer = () => <footer className={styles.footer}>
- © Matvei Kudrin 2022
-</footer>
+export function Footer() {
+  return (
+    <footer className={styles.footer}>
+      © Matvei Kudrin
+      {' '}
+      {new Date().getFullYear()}
+    </footer>
+  );
+}
