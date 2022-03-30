@@ -84,7 +84,7 @@ export function List() {
         </Form.Group>
 
         <Button className={styles.filterButton} variant="primary" type="submit">
-          Submit
+          Filter
         </Button>
       </Form>
     </aside>

@@ -1,8 +1,8 @@
 /**
- * @param str - string
- * @return str but with 1st letter capitalized
+ * @param word - string
+ * @return word but with 1st letter capitalized
  */
-export function capitalize(str: string): string {
-  if(!str) return str;
-  return str[0].toUpperCase() + str.slice(1);
+export function capitalize(word: string): string {
+  if(!word) return word;
+  return word[0].toUpperCase() + word.slice(1);
 }

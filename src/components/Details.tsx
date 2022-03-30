@@ -3,14 +3,15 @@ import React, {useEffect, useState} from "react";
 import {getCar} from "../api/requests";
 import {Car} from "../interfaces/car";
 import {formatDetailsString} from "../utils/format-details-string";
-import {Button} from "react-bootstrap";
+import {Button, Placeholder} from "react-bootstrap";
 import styles from './Details.module.scss';
 
 export function Details() {
   const params = useParams();
   const navigate = useNavigate();
   const id = parseInt(params.id as string);
-  const [car, setCar] = useState<Car>()
+  const [car, setCar] = useState<Car>();
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
     getCar(id)
@@ -21,12 +22,12 @@ export function Details() {
   if(!car) return null;
   return <div className={styles.pageWrapper}>
     {/*<Placeholder as="img"></Placeholder>*/}
-    <img src={car.pictureUrl} alt={car.modelName}
-         // onLoad={}
+    <img src={car.pictureUrl} alt=""
+      // onLoad={}
     />
     <div className={styles.contentWrapper}>
       <main className={styles.main}>
-        <h3 className={styles.title}> {car.manufacturerName} {car.modelName} </h3>
+        {car ? <h3 className={styles.title}> {car.manufacturerName} {car.modelName} </h3> : <Placeholder as="h3"/>}
         <div className={styles.details}>{formatDetailsString(car)}</div>
         <p className={styles.deliveryText}>
           This car is currently available and can be delivered as soon as tomorrow morning.

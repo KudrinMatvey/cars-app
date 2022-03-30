@@ -4,19 +4,23 @@ import {Placeholder} from "react-bootstrap";
 import styles from './Card.module.scss'
 import {formatDetailsString} from "../utils/format-details-string";
 
-export function Card({car}: { car?: Car }) {
+interface CardProps {
+  car: Car | null;
+}
+
+export function Card({car}: CardProps) {
   if (!car) {
-    return <Placeholder className={styles.card} animation="glow">
-      <Placeholder className={styles.image}/>
-      <Placeholder className={styles.model} xs={4}/>
-      <Placeholder className={styles.details} xs={4}/>
-      <Placeholder className={[styles.link, styles.placeholderLink]} xs={3}/>
+    return <Placeholder as="div" className={styles.card} animation="glow">
+      <Placeholder as="img" className={styles.image}/>
+      <Placeholder data-testid="model" className={styles.model} xs={4}/>
+      <Placeholder data-testid="details" className={styles.details} xs={4}/>
+      <Placeholder data-testid="link" className={styles.link} xs={3}/>
     </Placeholder>;
   }
   return <div className={styles.card}>
     <img className={styles.image} src={car.pictureUrl} alt={car.modelName}/>
-    <div className={styles.model}>{car.manufacturerName} {car.modelName}</div>
-    <div className={styles.details}>{formatDetailsString(car)}</div>
+    <span className={styles.model}>{car.manufacturerName} {car.modelName}</span>
+    <span className={styles.details}>{formatDetailsString(car)}</span>
     <Link className={styles.link} to={`/cars/${car.stockNumber}`}>View details</Link>
   </div>;
 }

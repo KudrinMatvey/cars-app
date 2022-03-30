@@ -61,6 +61,7 @@
 .page {
   display: flex;
   align-items: flex-start;
+  min-height: $content-min-height;
   gap: $padding-l;
   padding: $padding-l;
 }
