@@ -29,6 +29,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/prop-types': 'off',
+    'react/require-default-props': 'off',
     'max-len': ['error', {
       code: 130,
     }],

@@ -9,6 +9,7 @@ export function NotFound() {
       <p className={styles.par}>Sorry the page you are looking for does not exist.</p>
       <p className={styles.par}>
         You can always go to
+        {' '}
         <Link to="/">homepage.</Link>
       </p>
     </div>

@@ -1,37 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {
-  BrowserRouter, Navigate, Route, Routes,
-} from 'react-router-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Details } from './components/Details';
-import { List } from './components/List';
-import { NotFound } from './components/NotFound';
+import App from './App';
 
 // to app, app to page wrapper
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<App />}>
-          <Route path="/cars">
-            <Route path=":id" element={<Details />} />
-            <Route index element={<List />} />
-          </Route>
-          <Route
-            path="/"
-            element={<Navigate to="/cars" replace />}
-          />
-          <Route path="/not-found" element={<NotFound />} />
-          <Route
-            path="*"
-            element={<Navigate to="/not-found" replace />}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );

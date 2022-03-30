@@ -24,6 +24,7 @@ export function Card({ car }: CardProps) {
       <img className={styles.image} src={car.pictureUrl} alt={car.modelName} />
       <span className={styles.model}>
         {car.manufacturerName}
+        {' '}
         {car.modelName}
       </span>
       <span className={styles.details}>{formatDetailsString(car)}</span>

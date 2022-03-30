@@ -41,6 +41,7 @@ export function Details() {
           {car ? (
             <h3 className={styles.title}>
               {car.manufacturerName}
+              {' '}
               {car.modelName}
             </h3>
           ) : <Placeholder as="h3" />}
