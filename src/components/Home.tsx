@@ -10,9 +10,6 @@ import { Filter } from '../types/filter';
 import { Pagination } from './Pagination';
 
 const initialPageData = { cars: new Array(10).fill(null) };
-// todo test if a new filter is performaed - page should reset
-// todo rename variables
-// extract components
 
 export function Home() {
   const [data, setData] = useState<CarsPage>(initialPageData);

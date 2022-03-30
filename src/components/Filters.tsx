@@ -3,6 +3,7 @@ import { FormEvent } from 'react';
 import styles from './Filters.module.scss';
 import { Filter } from '../types/filter';
 import { Manufacturer } from '../types/manufacturer';
+import { capitalize } from '../utils/capitalize';
 
 interface Props {
   colors: string[],
@@ -25,7 +26,7 @@ export function Filters({
     const { currentTarget } = event;
     const filters: {[key in Filter]?: string } = {};
     const handleValue = (filter: Filter, items: string[]): void => {
-      const val = items.find((item) => item === currentTarget[filter].value);
+      const val = items.find((item) => item === (currentTarget.elements.namedItem(filter) as HTMLSelectElement)?.value);
       if (val) {
         filters[filter] = val;
       }
@@ -36,20 +37,20 @@ export function Filters({
   };
 
   return (
-    <Form onSubmit={submitForm}>
+    <Form data-testid="form" onSubmit={submitForm}>
       <Form.Group className={styles.filter} controlId={Filter.COLOR}>
         <Form.Label className={styles.label}>Color</Form.Label>
-        <Form.Select defaultValue={selectedColor}>
+        <Form.Select data-testid="select-color" defaultValue={selectedColor}>
           <option>All colors</option>
-          {colors.map((color) => <option value={color} key={color}>{color}</option>)}
+          {colors.map((color) => <option value={color} key={color}>{capitalize(color)}</option>)}
         </Form.Select>
       </Form.Group>
 
       <Form.Group className={styles.filter} controlId={Filter.MANUFACTURER}>
         <Form.Label className={styles.label}>Manufacturer</Form.Label>
-        <Form.Select defaultValue={selectedManufacturer}>
+        <Form.Select data-testid="select-manufacturer" defaultValue={selectedManufacturer}>
           <option>All manufacturers</option>
-          {manufacturers.map(({ name }) => <option value={name} key={name}>{name}</option>)}
+          {manufacturers.map(({ name }) => <option value={name} key={name}>{capitalize(name)}</option>)}
         </Form.Select>
       </Form.Group>
 

@@ -1,0 +1,27 @@
+@import "variables";
+
+$theme-colors: (
+  "primary": $color-tango,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+/* stylelint-disable selector-class-pattern */
+.btn.btn-primary {
+  color: white;
+
+  &:hover {
+    background-color: $color-ochre;
+  }
+}
+
+.btn-link {
+  color: $color-tango;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-tango;
+    text-decoration: underline;
+  }
+}
+/* stylelint-enable selector-class-pattern */

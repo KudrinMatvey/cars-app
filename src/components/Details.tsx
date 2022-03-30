@@ -20,21 +20,20 @@ export function Details() {
   }, [id, navigate]);
 
   const showImage = car?.pictureUrl && imgStatus === 'loaded';
-  const showImagePlaceholder = car?.pictureUrl && imgStatus === 'loading';
-
+  const showImagePlaceholder = imgStatus === 'loading';
   return (
     <div className={styles.pageWrapper}>
       {showImagePlaceholder && (
       <Placeholder
         as="img"
         className={styles.img}
-        src={car.pictureUrl}
+        src={car?.pictureUrl}
         alt=""
-        onLoad={() => { setImgStatus('loaded'); }}
+        onLoad={() => setImgStatus('loaded')}
         onError={() => setImgStatus('error')}
       />
       )}
-      {showImage && <img className={styles.img} src={car.pictureUrl} alt="" />}
+      {showImage && <img data-testid="image" className={styles.img} src={car.pictureUrl} alt="" />}
 
       <div className={styles.contentWrapper}>
         <main className={styles.main}>

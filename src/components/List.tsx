@@ -28,7 +28,11 @@ export function List({ loaded, cars, totalCarsCount }: Props) {
           {' '}
           results
         </div>
-      ) : <Placeholder as="div" animation="glow" className={styles.subtitle}><Placeholder xs={5} /></Placeholder>}
+      ) : (
+        <Placeholder data-testid="placeholder" as="div" animation="glow" className={styles.subtitle}>
+          <Placeholder xs={5} />
+        </Placeholder>
+      )}
       <ul className={styles.list}>
         {cars.map((car, index) => (
           // eslint-disable-next-line react/no-array-index-key

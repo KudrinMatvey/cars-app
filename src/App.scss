@@ -1,21 +1,6 @@
 @import "variables";
+@import "bootstrap-overrides";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&");
-
-$theme-colors: (
-  "primary": $color-tango,
-);
-
-@import "~bootstrap/scss/bootstrap";
-
-/* stylelint-disable selector-class-pattern */
-.btn.btn-primary {
-  color: white;
-
-  &:hover {
-    background-color: $color-ochre;
-  }
-}
-/* stylelint-enable selector-class-pattern */
 
 #root {
   font-family: Roboto, sans-serif;
@@ -38,9 +23,7 @@ body,
   line-height: 1em;
 }
 
-/* stylelint-disable selector-class-pattern */
-a,
-.btn-link {
+a {
   color: $color-tango;
   text-decoration: none;
 
@@ -49,7 +32,6 @@ a,
     text-decoration: underline;
   }
 }
-/* stylelint-enable selector-class-pattern */
 
 h1,
 h2,

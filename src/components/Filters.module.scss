@@ -5,10 +5,8 @@
   float: right;
 }
 
-.filter {
-  & + .filter {
-    margin-top: $padding-m;
-  }
+.filter + .filter {
+  margin-top: $padding-m;
 }
 
 .label {
