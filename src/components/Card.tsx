@@ -1,8 +1,8 @@
-import {Link} from 'react-router-dom';
-import {Placeholder} from 'react-bootstrap';
-import {Car} from '../types/car';
+import { Link } from 'react-router-dom';
+import { Placeholder } from 'react-bootstrap';
+import { Car } from '../types/car';
 import styles from './Card.module.scss';
-import {formatDetailsString} from '../utils/format-details-string';
+import { formatDetailsString } from '../utils/format-details-string';
 
 interface CardProps {
   car: Car | null;

@@ -1,12 +1,12 @@
-import {useSearchParams} from 'react-router-dom';
-import React, {FormEvent, useEffect, useState} from 'react';
-import {Button, Form, Placeholder} from 'react-bootstrap';
-import {getCars, getColors, getManufacturers} from '../api/requests';
-import {Manufacturer} from '../types/manufacturer';
-import {CarsPage} from '../types/cars-page';
-import {Card} from './Card';
+import { useSearchParams } from 'react-router-dom';
+import React, { FormEvent, useEffect, useState } from 'react';
+import { Button, Form, Placeholder } from 'react-bootstrap';
+import { getCars, getColors, getManufacturers } from '../api/requests';
+import { Manufacturer } from '../types/manufacturer';
+import { CarsPage } from '../types/cars-page';
+import { Card } from './Card';
 import styles from './List.module.scss';
-import {Filter} from '../types/filter';
+import { Filter } from '../types/filter';
 
 interface FiltersForm extends HTMLFormElement {
   [Filter.COLOR]: HTMLSelectElement,

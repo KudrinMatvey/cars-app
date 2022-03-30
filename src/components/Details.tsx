@@ -1,9 +1,9 @@
-import {useNavigate, useParams} from 'react-router-dom';
-import React, {useEffect, useState} from 'react';
-import {Button, Placeholder} from 'react-bootstrap';
-import {getCar} from '../api/requests';
-import {Car} from '../types/car';
-import {formatDetailsString} from '../utils/format-details-string';
+import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Button, Placeholder } from 'react-bootstrap';
+import { getCar } from '../api/requests';
+import { Car } from '../types/car';
+import { formatDetailsString } from '../utils/format-details-string';
 import styles from './Details.module.scss';
 
 export function Details() {

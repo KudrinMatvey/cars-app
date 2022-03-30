@@ -1,5 +1,5 @@
-import {Car} from '../types/car';
-import {capitalize} from './capitalize';
+import { Car } from '../types/car';
+import { capitalize } from './capitalize';
 
 /**
  * @param car

@@ -1,8 +1,8 @@
-import {Car} from '../types/car';
-import {Manufacturer} from '../types/manufacturer';
-import {CarsPage} from '../types/cars-page';
-import {FilterQuery} from '../types/filter-query';
-import {omitUndefined} from '../utils/omit-undefined';
+import { Car } from '../types/car';
+import { Manufacturer } from '../types/manufacturer';
+import { CarsPage } from '../types/cars-page';
+import { FilterQuery } from '../types/filter-query';
+import { omitUndefined } from '../utils/omit-undefined';
 
 export function getCar(stockNumber: number): Promise<Car> {
   return fetch(`https://auto1-mock-server.herokuapp.com/api/cars/${stockNumber}`)

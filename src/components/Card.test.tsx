@@ -1,8 +1,5 @@
-import {render, screen} from '@testing-library/react';
-import {Card} from './Card';
-
-const placeholderClass = 'placeholder';
-
+import { render, screen } from '@testing-library/react';
+import { Card } from './Card';
 // todo: обновление страницы - выбираются нужные фильтры и нужная страница
 
 describe('card component', () => {
